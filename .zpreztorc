@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+zstyle ':prezto:load' pmodule \
+  'completion' \
+  'directory' \
+  'environment' \
+  'history' \
+  'history-substring-search' \
+  'prompt' \
+  'spectrum' \
+  'syntax-highlighting' \
+  'utility'
+
+zstyle ':prezto:*:*' color 'yes'
+zstyle ':prezto:module:prompt' theme 'pure'

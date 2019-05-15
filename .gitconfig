@@ -1,0 +1,13 @@
+[user]
+	name = Italo Devoto Ramella
+	email = italodr@gmail.com
+[core]
+	editor = vim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
+	autocrlf = input
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
