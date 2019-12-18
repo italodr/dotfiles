@@ -12,16 +12,16 @@ module.exports = {
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
 
     // font weight for bold characters: 'normal' or 'bold'
-    fontWeightBold: 'normal',
+    fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1.5,
+    lineHeight: 1,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -33,23 +33,23 @@ module.exports = {
     cursorAccentColor: '#000',
 
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorShape: 'BLOCK',
+    cursorShape: 'UNDERLINE',
 
     // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: '#fff',
+    foregroundColor: '#f1f1f1',
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: '#000',
+    backgroundColor: '#1b1d1c',
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: '#1b1d1c',
 
     // custom CSS to embed in the main window
     css: '',
@@ -75,9 +75,9 @@ module.exports = {
     colors: {
       black: '#000000',
       red: '#C51E14',
-      green: '#1DC121',
+      green: '#32b67a',
       yellow: '#C7C329',
-      blue: '#0A2FC4',
+      blue: '#005297',
       magenta: '#C839C5',
       cyan: '#20C5C6',
       white: '#C7C7C7',
@@ -88,7 +88,7 @@ module.exports = {
       lightBlue: '#6A76FB',
       lightMagenta: '#FD7CFC',
       lightCyan: '#68FDFE',
-      lightWhite: '#FFFFFF',
+      lightWhite: '#FFFFFF'
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -135,13 +135,9 @@ module.exports = {
 
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
-    webGLRenderer: true,
+    webGLRenderer: true
 
     // for advanced config flags please refer to https://hyper.is/#cfg
-  },
-
-  hypercwd: {
-    initialWorkingDirectory: '~/Sites'
   },
 
   // a list of plugins to fetch and install from npm
@@ -150,10 +146,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [
-    "hyper-material-theme",
-    "hypercwd"
-  ],
+  plugins: [],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -163,5 +156,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  },
+  }
 };
