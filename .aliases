@@ -18,7 +18,14 @@ alias gconf='git diff --name-only --diff-filter=U'
 alias gbr='for k in `git branch -r | perl -pe "s/^..(.*?)( ->.*)?$/\1/"`; do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k -- | head -n 1`\\t$k; done | sort -r'
 alias gtg='git for-each-ref --format="%(color:green)%(refname:short) %(color:red)%(taggerdate:relative)" --sort="taggerdate" refs/tags'
 
+alias pam='gaa && gcm "Update notes" && gps'
 alias r!="exec zsh -l"
+alias reload='. ~/.zshrc'
 
 # Sleep mac
 alias sleep!="pmset sleepnow"
+
+# Convert to mp4
+tomp4() {
+  ffmpeg -protocol_whitelist file,http,https,tcp,tls -i "$1"."$2" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 "$1".mp4
+}

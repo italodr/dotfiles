@@ -3,6 +3,7 @@
 [user]
   name = Italo Devoto Ramella
   email = italodr@gmail.com
+  signingkey = XXXXX
 [core]
   editor = vim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
