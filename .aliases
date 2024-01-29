@@ -21,6 +21,8 @@ alias gfuck='git reset --soft HEAD^ && git reset'
 alias gbr='for k in `git branch -r | perl -pe "s/^..(.*?)( ->.*)?$/\1/"`; do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k -- | head -n 1`\\t$k; done | sort -r'
 alias gtg='git for-each-ref --format="%(color:green)%(refname:short) %(color:red)%(taggerdate:relative)" --sort="taggerdate" refs/tags'
 
+alias pypip='python -m pip'
+
 alias r!="exec zsh -l"
 alias reload='. ~/.zshrc'
 
