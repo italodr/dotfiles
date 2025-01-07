@@ -32,6 +32,32 @@ alias reload='. ~/.zshrc'
 # Sleep mac
 alias sleep!="pmset sleepnow"
 
+backup_sqlite() {
+    local DEFAULT_DB_PATH="./database.sqlite"
+    local DEFAULT_BACKUP_DIR="$HOME/Library/CloudStorage/GoogleDrive-italodr@gmail.com/My Drive/Backups"
+
+    local DB_PATH="${1:-$DEFAULT_DB_PATH}"
+    local BACKUP_DIR="${2:-$DEFAULT_BACKUP_DIR}"
+    local CURRENT_DIR=$(basename "$PWD")
+    local FULL_BACKUP_DIR="$BACKUP_DIR/$CURRENT_DIR"
+
+    mkdir -p "$FULL_BACKUP_DIR"
+
+    local TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+    local BACKUP_FILE="$FULL_BACKUP_DIR/backup_$TIMESTAMP.sqlite.gz"
+
+    gzip -c "$DB_PATH" > "$BACKUP_FILE"
+
+    if [[ $? -eq 0 ]]; then
+        echo "Copia de seguridad comprimida creada en: $BACKUP_FILE"
+    else
+        echo "Error al crear la copia de seguridad"
+        return 1
+    fi
+}
+
+alias backup="backup_sqlite"
+
 # Convert to mp4
 tomp4() {
   ffmpeg -protocol_whitelist file,http,https,tcp,tls -i "$1"."$2" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 "$1".mp4
