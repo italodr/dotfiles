@@ -14,6 +14,7 @@ alias gps='git push origin $(currentBranch)'
 alias gpa='gps & git push origin --tags'
 alias gsb='git status -sb'
 alias gfix='git commit --fixup HEAD'
+alias ginit='git init && git add . && gcm "Initial commit"'
 alias glog='git log --all --decorate --oneline --graph'
 alias gcache='git rm -r --cached .'
 alias gconf='git diff --name-only --diff-filter=U'
@@ -26,12 +27,18 @@ alias pypip='python -m pip'
 alias python:create='python -m venv'
 alias python:requirements='pip freeze > requirements.txt'
 
+alias personio='bash ~/.personio.sh'
+
 alias r!="exec zsh -l"
 alias reload='. ~/.zshrc'
+
+# Convert images into webp
+alias towebp='function _towebp(){ folder="$1"; shift; for file in "$folder"/*.png; do cwebp "$file" -o "${file%.png}.webp" "$@"; done }; _towebp'
 
 # Sleep mac
 alias sleep!="pmset sleepnow"
 
+# Función para respaldar bases de datos SQLite
 backup_sqlite() {
     local DEFAULT_DB_PATH="./database.sqlite"
     local DEFAULT_BACKUP_DIR="$HOME/Library/CloudStorage/GoogleDrive-italodr@gmail.com/My Drive/Backups"
@@ -56,6 +63,7 @@ backup_sqlite() {
     fi
 }
 
+# Alias para facilitar el uso
 alias backup="backup_sqlite"
 
 # Convert to mp4
